@@ -81,6 +81,12 @@
       <DependentUpon>Goods Receipt.b1f</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Areej.ItemTransfer.Main\Areej.ItemTransfer.Main.csproj">
+      <Project>{54922830-c57e-4568-a276-e10c129c8ff5}</Project>
+      <Name>Areej.ItemTransfer.Main</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
