@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E91150D0-0A41-460A-8F7F-60F6123224FE}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{54922830-C57E-4568-A276-E10C129C8FF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Areej.ItemTransfer.UI</RootNamespace>
-    <AssemblyName>Areej.ItemTransfer.UI</AssemblyName>
+    <RootNamespace>Areej.ItemTransfer.Main</RootNamespace>
+    <AssemblyName>Areej.ItemTransfer.Main</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,56 +29,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Areej.ItemTransfer.UI.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SAPBusinessOneSDK, Version=1.0.0.1, Culture=neutral, PublicKeyToken=c7c3cb60e45d119f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\SAP\SAP Business One SDK\Lib\SAPBusinessOneSDK.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="SAPBusinessOneSDK" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Form1.b1f">
-      <FormCategory>UserForm</FormCategory>
-    </None>
-    <Compile Include="B1SystemForm.cs" />
-    <Compile Include="Form1.b1f.cs">
-      <DependentUpon>Form1.b1f</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Goods Issue.b1f.cs">
-      <DependentUpon>Goods Issue.b1f</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Goods Receipt.b1f.cs">
-      <DependentUpon>Goods Receipt.b1f</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>
-      </SubType>
-    </Compile>
+    <Compile Include="AddonInfoInfo.cs" />
+    <Compile Include="B1Helper.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Model\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Forms\Goods Issue.b1f">
-      <FormCategory>SystemForm</FormCategory>
-    </None>
-    <None Include="Forms\Goods Issue.b1f__orig_srf">
-      <DependentUpon>Goods Issue.b1f</DependentUpon>
-    </None>
-    <None Include="Forms\Goods Receipt.b1f">
-      <FormCategory>SystemForm</FormCategory>
-    </None>
-    <None Include="Forms\Goods Receipt.b1f__orig_srf">
-      <DependentUpon>Goods Receipt.b1f</DependentUpon>
-    </None>
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
